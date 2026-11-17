@@ -2,6 +2,8 @@
 
 ![matrix-klok: a WiFi clock with animations on an 8 by 32 WS2812B LED matrix](docs/cover.svg)
 
+![Matrix-Klok showing 22:37 in warm orange on an 8×32 LED matrix in a white 3D-printed enclosure.](docs/photos/clock-front.jpg)
+
 A WiFi clock with animations for a 30-pin ESP32 DevKit and an 8×32 WS2812B LED matrix ([datasheet](https://www.world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf)).
 <!-- TODO: hardware purchase links -->
 
@@ -47,11 +49,13 @@ The previews are rendered from the actual effect code in `src/main.cpp` with a s
 
 ## Photos
 
-<!-- TODO: add a photo of the finished clock in its 3D-printed enclosure, front view, at docs/photo-front.jpg -->
+| Front | Magenta |
+| --- | --- |
+| ![Matrix-Klok showing 22:37 in warm orange on an 8×32 LED matrix in a white 3D-printed enclosure.](docs/photos/clock-front.jpg) | ![Matrix-Klok showing 22:37 in magenta on an 8×32 WS2812B LED matrix.](docs/photos/clock-magenta.jpg) |
 
-| Front |
-| --- |
-| ![Finished matrix-klok in its 3D-printed enclosure, front view](docs/photo-front.jpg) |
+| Green | Close-up |
+| --- | --- |
+| ![Matrix-Klok showing 22:38 in green on an 8×32 LED matrix in a 3D-printed case.](docs/photos/clock-green.jpg) | ![Close-up of the Matrix-Klok LED matrix and 3D-printed enclosure, displaying 22:37 in orange.](docs/photos/clock-closeup.jpg) |
 
 ## Install
 
