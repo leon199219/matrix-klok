@@ -1,0 +1,9 @@
+# PlatformIO build output
+.pio/
+.vscode/
+# Local secrets (copy include/secrets.h.example)
+include/secrets.h
+# Build artifacts
+dist/
+*.bin
+*.tmp
