@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- README in the MakerPulse-CYD house style, with a cover image.
+- README in the MakerPulse-CYD house style, with a cover image and product photos.
 - SECURITY.md.
 
 ## [2026.11.17-v8] - 2026-11-17
