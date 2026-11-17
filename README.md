@@ -1,24 +1,31 @@
 # Matrix-Klok
 
-A WiFi clock with animations for an ESP32 and an 8x32 WS2812B LED matrix. It takes the time from NTP, keeps it in a DS3231 RTC (so it keeps running without WiFi), and switches between summer and winter time automatically (Europe/Amsterdam by default).
+![matrix-klok: a WiFi clock with animations on an 8 by 32 WS2812B LED matrix](docs/cover.svg)
 
-## Features
+A WiFi clock with animations for a 30-pin ESP32 DevKit and an 8×32 WS2812B LED matrix ([datasheet](https://www.world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf)).
+<!-- TODO: hardware purchase links -->
+
+**Firmware:** [`2026.11.17-v8`](src/main.cpp) ([changelog](CHANGELOG.md)) · **License:** [MIT](LICENSE)
+
+---
+
+## What it does
 
 - **WiFi setup through WiFiManager.** On first boot, or when the setup access point is switched on, the clock opens the AP **`Matrix-Klok-Setup`**. Connect with a phone and pick your network (captive portal, or http://192.168.4.1).
-- **NTP + DS3231 RTC.** Time is synced from NTP every 6 hours and stored in the DS3231 (in UTC). The colon pulses on the DS3231's 1 Hz SQW tick.
+- **NTP + DS3231 RTC.** Time is synced from NTP every 6 hours and stored in the DS3231 (in UTC). The clock keeps running without WiFi. The colon pulses on the DS3231's 1 Hz SQW tick. Summer and winter time switch automatically (Europe/Amsterdam by default).
 - **Screens:** time → time with seconds → date → temperature (from the DS3231). After 10 s the clock returns to the time.
 - **Colour modes:** rainbow, colour cycle, warm white, cyan, orange, red, green, purple and blue. Brightness has 7 steps, with automatic night dimming (23:00–07:00).
-- **Web GUI** on `http://<clock-ip>/` (also `http://matrix-klok.local/`):
+- **Web GUI** on `http://<clock-ip>/` (also `http://matrix-klok.local/`), on port 80:
   - Daily display timer: the display switches off between a set off time and on time. A button press wakes it for 30 s.
   - Toggle for the hourly shows.
   - **Restart** button.
   - Button that switches on the **setup access point**.
   - `GET /api/timer` returns the timer state as JSON.
 - **Hourly shows.** Every full hour an 8-second animation plays, using the next effect in the rotation each time. There are no shows at night or while the display timer is off. The rotation position is saved in NVS.
-- **OTA updates** over WiFi (ArduinoOTA, password protected).
+- **OTA updates** over WiFi (ArduinoOTA, password protected). Hostname `matrix-klok`, port 3232.
 - Settings (brightness, colour mode, timer, shows) survive a power loss.
 
-### Show effects (13)
+## Effects
 
 | # | Name | Effect | Preview |
 |---|------|--------|---------|
@@ -38,13 +45,71 @@ A WiFi clock with animations for an ESP32 and an 8x32 WS2812B LED matrix. It tak
 
 The previews are rendered from the actual effect code in `src/main.cpp` with a small host simulator: the full 8-second show, logical 32x8 layout, at the real frame timing (shown at 25 or 16.7 fps). Colours are slightly boosted to look closer to real LEDs on a screen.
 
+## Photos
+
+<!-- TODO: add a photo of the finished clock in its 3D-printed enclosure, front view, at docs/photo-front.jpg -->
+
+| Front |
+| --- |
+| ![Finished matrix-klok in its 3D-printed enclosure, front view](docs/photo-front.jpg) |
+
+## Install
+
+1. Use a 30-pin ESP32 DevKit (CH340 USB). GPIO0 is only on the **BOOT** button. Use a USB cable that carries data.
+2. Install [PlatformIO](https://platformio.org/) (`pip install platformio`). Libraries are taken from `platformio.ini`: `fastled/FastLED@^3.9.0`, `adafruit/RTClib@^2.1.4` and `tzapu/WiFiManager@^2.0.17`.
+3. Copy [`include/secrets.h.example`](include/secrets.h.example) to `include/secrets.h` and set your own OTA password. `include/secrets.h` is ignored by git. Without it the firmware still builds, but OTA is then **not** password protected, so always create it.
+4. Build:
+
+   ```sh
+   pio run                                          # build
+   sh tools/make_merged.sh                          # build + dist/ with a single merged bin
+   pio device monitor                               # serial log (115200 baud)
+   ```
+
+   The merge script is not marked executable in the repo, so run it with `sh`.
+
+5. First flash (USB):
+
+   1. Hold the **BOOT** button. Inside the enclosure, hold BOOT while you plug in USB.
+   2. Start the flash:
+
+      ```sh
+      pio run -e esp32dev -t upload
+      # or, with the merged bin from sh tools/make_merged.sh:
+      python -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 dist/matrix-klok-merged.bin
+      ```
+
+   3. Release BOOT once you see `Writing at 0x...`.
+   4. Press **EN** (reset) if the board doesn't restart by itself.
+
+The merged bin also overwrites NVS, so the settings and WiFi credentials are wiped.
+
+`include/config.h` has pins, layout and timings only. It has no secrets and stays in the repo.
+
+## Updating
+
+After the first flash the clock appears on your network as `matrix-klok` (`matrix-klok.local`).
+
+- **PlatformIO:** `pio run -e ota -t upload`. `tools/ota_auth.py` reads the password from `include/secrets.h` automatically.
+- **espota.py** (ships with the Arduino-ESP32 core):
+
+  ```sh
+  python espota.py -i <clock-ip> -p 3232 -P 34567 --auth=<your-ota-password> -f .pio/build/esp32dev/firmware.bin -r
+  ```
+
+  On Windows, allow inbound TCP on the host port (`-P 34567`) in the firewall if the upload stops with "No response from device".
+
+During an OTA update the matrix shows a green progress bar.
+
 ## Hardware
+
+<!-- TODO: hardware purchase links (and a link for the 3D-printed enclosure) -->
 
 | Qty | Part |
 |-----|------|
-| 1 | ESP32 DevKit (30-pin, ESP32-WROOM-32) |
-| 1 | WS2812B LED matrix, 8x32 (256 LEDs) |
-| 1 | DS3231 RTC module (with a coin cell) |
+| 1 | ESP32 DevKit (30-pin, ESP32-WROOM-32, CH340 USB) |
+| 1 | WS2812B LED matrix, 8x32 flexible (256 LEDs) ([datasheet](https://www.world-semi.com/web/userfiles/productfile/WS2812B_V5WDatasheet_V6.1_EN.pdf)) |
+| 1 | DS3231 RTC module (with a coin cell) ([datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/ds3231.pdf)) |
 | 3 | Push buttons (momentary) |
 | 1 | 5 V 5 A power supply |
 | 1 | 3D-printed enclosure |
@@ -95,49 +160,15 @@ Pins, brightness, night dimming, time zone, NTP servers, host name, AP name and 
 
 The defaults are `COLUMN_MAJOR 1`, `SERPENTINE 1`, `ORIGIN_BOTTOM_LEFT 0`, `MIRROR_X 0`. If the image is scrambled or mirrored, hold the left button while powering up. The test shows `TEST 1` with red top-left, green top-right, blue bottom-left and white bottom-right, then a runner that follows the wiring. Adjust the four options until it looks right.
 
-## Building
+## Do not publish
 
-Requires [PlatformIO](https://platformio.org/) (`pip install platformio`).
+See [SECURITY.md](SECURITY.md).
 
-```sh
-cp include/secrets.h.example include/secrets.h   # then set your own OTA password
-pio run                                          # build
-./tools/make_merged.sh                           # build + dist/ with a single merged bin
-pio device monitor                               # serial log (115200 baud)
-```
+- no `include/secrets.h` with your OTA password
+- `include/config.h` has no secrets and belongs in the repo
 
-`include/secrets.h` is ignored by git. Without it the firmware still builds, but OTA is then **not** password protected, so always create it.
-
-## Flashing
-
-### First flash (USB)
-
-1. Connect the ESP32 over USB.
-2. Hold the **BOOT** button.
-3. Start the flash:
-   ```sh
-   pio run -e esp32dev -t upload
-   # or, with the merged bin from tools/make_merged.sh:
-   python -m esptool --chip esp32 --port COM4 --baud 460800 write-flash 0x0 dist/matrix-klok-merged.bin
-   ```
-4. Release BOOT once you see `Writing at 0x...`.
-5. Press **EN** (reset) if the board doesn't restart by itself.
-
-The merged bin also overwrites NVS, so the settings and WiFi credentials are wiped.
-
-### Updates over WiFi (OTA)
-
-After the first flash the clock appears on your network as `matrix-klok` (`matrix-klok.local`).
-
-- **PlatformIO:** `pio run -e ota -t upload`. `tools/ota_auth.py` reads the password from `include/secrets.h` automatically.
-- **espota.py** (ships with the Arduino-ESP32 core):
-  ```sh
-  python espota.py -i <clock-ip> -p 3232 -P 34567 --auth=<your-ota-password> -f .pio/build/esp32dev/firmware.bin -r
-  ```
-  On Windows, allow inbound TCP on the host port (`-P 34567`) in the firewall if the upload stops with "No response from device".
-
-During an OTA update the matrix shows a green progress bar.
+Copy [`include/secrets.h.example`](include/secrets.h.example) to `include/secrets.h` on your machine.
 
 ## License
 
-[MIT](LICENSE) © 2026 Leon (leon199219)
+[MIT](LICENSE) © 2026 Leon ([leon199219](https://github.com/leon199219))

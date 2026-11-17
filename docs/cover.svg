@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="400" viewBox="0 0 1280 400" role="img">
+  <title>matrix-klok: a WiFi clock with animations on an 8 by 32 WS2812B LED matrix</title>
+  <defs>
+    <pattern id="led-off" width="15" height="15" patternUnits="userSpaceOnUse" patternTransform="translate(152.5 70.5)">
+      <circle cx="7.5" cy="7.5" r="4.3" fill="#1A2330"/>
+    </pattern>
+    <pattern id="mini-off" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="translate(61.0 51.0)">
+      <circle cx="3.0" cy="3.0" r="1.65" fill="#18202B"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="400" fill="#0C1016"/>
+  <rect x="40" y="32" width="1200" height="336" rx="20" fill="#121821" stroke="#1E2836" stroke-width="1"/>
+  <rect x="61.0" y="51.0" width="192.0" height="48.0" fill="url(#mini-off)"/>
+  <circle cx="154.0" cy="66.0" r="1.65" fill="#2EE86A"/>
+  <circle cx="160.0" cy="66.0" r="1.65" fill="#2EE86A"/>
+  <circle cx="154.0" cy="78.0" r="1.65" fill="#2EE86A"/>
+  <circle cx="160.0" cy="78.0" r="1.65" fill="#2EE86A"/>
+  <rect x="152.5" y="70.5" width="975.0" height="165.0" rx="10" fill="url(#led-off)"/>
+  <circle cx="190.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="190.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="205.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="235.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="190.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="220.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="190.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="190.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="190.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="190.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="250.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="295.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="310.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="325.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="280.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="340.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="280.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="340.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="280.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="295.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="310.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="325.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="340.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="280.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="340.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="280.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="340.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="280.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="340.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="370.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="385.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="415.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="430.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="400.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="475.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="490.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="505.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="520.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="520.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="475.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="490.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="505.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="490.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="505.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="460.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="520.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="550.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="580.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="550.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="565.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="580.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="610.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="670.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="610.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="670.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="625.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="655.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="640.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="625.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="655.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="610.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="670.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="610.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="670.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="700.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="715.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="730.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="820.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="805.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="790.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="775.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="790.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="805.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="760.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="820.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="850.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="865.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="880.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="895.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="910.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="955.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="970.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="985.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="940.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1000.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="940.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1000.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="940.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1000.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="940.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1000.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="940.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1000.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="955.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="970.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="985.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1090.0" cy="108.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1075.0" cy="123.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1060.0" cy="138.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1045.0" cy="153.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1060.0" cy="168.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1075.0" cy="183.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1030.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <circle cx="1090.0" cy="198.0" r="5.2" fill="#3DFF7A"/>
+  <text x="640" y="338" text-anchor="middle" font-family="ui-sans-serif, system-ui, Helvetica, Arial, sans-serif" font-size="22" fill="#9AA4B2">WiFi clock for ESP32 and an 8×32 WS2812B LED matrix</text>
+</svg>
