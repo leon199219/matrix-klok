@@ -20,21 +20,23 @@ A WiFi clock with animations for an ESP32 and an 8x32 WS2812B LED matrix. It tak
 
 ### Show effects (13)
 
-| # | Name | Effect |
-|---|------|--------|
-| 1 | VUURWERK | Fireworks: rockets that burst into sparks |
-| 2 | MATRIX | Green "digital rain" |
-| 3 | STERREN | Twinkling coloured stars |
-| 4 | REGENBOOG | Flowing rainbow waves (plasma) |
-| 5 | SNEEUW | Falling snow that piles up |
-| 6 | PACMAN | Pac-Man chases a ghost, then hunts blue ghosts |
-| 7 | BALLEN | Bouncing balls with trails |
-| 8 | VUUR | Calm fire |
-| 9 | RUIMTE | Spaceship flying through a starfield with warp |
-| 10 | ONWEER | Rain with mild lightning flashes |
-| 11 | TETRIS | Blocks slide in and stack; full columns are cleared |
-| 12 | SNAKE | Snake game that eats apples and grows |
-| 13 | HART | Beating heart sliding across the screen |
+| # | Name | Effect | Preview |
+|---|------|--------|---------|
+| 1 | VUURWERK | Fireworks: rockets that burst into sparks | <img src="docs/effects/vuurwerk.gif" width="320" alt="VUURWERK preview"> |
+| 2 | MATRIX | Green "digital rain" | <img src="docs/effects/matrix.gif" width="320" alt="MATRIX preview"> |
+| 3 | STERREN | Twinkling coloured stars | <img src="docs/effects/sterren.gif" width="320" alt="STERREN preview"> |
+| 4 | REGENBOOG | Flowing rainbow waves (plasma) | <img src="docs/effects/regenboog.gif" width="320" alt="REGENBOOG preview"> |
+| 5 | SNEEUW | Falling snow that piles up | <img src="docs/effects/sneeuw.gif" width="320" alt="SNEEUW preview"> |
+| 6 | PACMAN | Pac-Man chases a ghost, then hunts blue ghosts | <img src="docs/effects/pacman.gif" width="320" alt="PACMAN preview"> |
+| 7 | BALLEN | Bouncing balls with trails | <img src="docs/effects/ballen.gif" width="320" alt="BALLEN preview"> |
+| 8 | VUUR | Calm fire | <img src="docs/effects/vuur.gif" width="320" alt="VUUR preview"> |
+| 9 | RUIMTE | Spaceship flying through a starfield with warp | <img src="docs/effects/ruimte.gif" width="320" alt="RUIMTE preview"> |
+| 10 | ONWEER | Rain with mild lightning flashes | <img src="docs/effects/onweer.gif" width="320" alt="ONWEER preview"> |
+| 11 | TETRIS | Blocks slide in and stack; full columns are cleared | <img src="docs/effects/tetris.gif" width="320" alt="TETRIS preview"> |
+| 12 | SNAKE | Snake game that eats apples and grows | <img src="docs/effects/snake.gif" width="320" alt="SNAKE preview"> |
+| 13 | HART | Beating heart sliding across the screen | <img src="docs/effects/hart.gif" width="320" alt="HART preview"> |
+
+The previews are rendered from the actual effect code in `src/main.cpp` with a small host simulator: the full 8-second show, logical 32x8 layout, at the real frame timing (shown at 25 or 16.7 fps). Colours are slightly boosted to look closer to real LEDs on a screen.
 
 ## Hardware
 
